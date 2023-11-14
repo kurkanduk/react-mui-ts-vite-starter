@@ -21,7 +21,7 @@ const PrivateRoutes = () => {
           element={<Navigate to="/" replace />}
         />
         <Route path="about" element={<AboutView />} />
-        {process.env.REACT_APP_DEBUG && <Route path="dev" element={<DevView />} />}
+        {import.meta.env.VITE_APP_DEBUG && <Route path="dev" element={<DevView />} />}
         <Route path="*" element={<NotFoundView />} />
       </Routes>
     </PrivateLayout>

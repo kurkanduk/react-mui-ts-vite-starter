@@ -1,19 +1,10 @@
 import { ElementType, FunctionComponent, useMemo } from 'react';
 import { Tooltip, IconButton, IconButtonProps } from '@mui/material';
-import AppIcon from '../AppIcon';
+import AppIcon from '../AppIcon/AppIcon';
 import AppLink from '../AppLink';
 import { alpha } from '@mui/material';
 
-export const MUI_ICON_BUTTON_COLORS = [
-  'inherit',
-  'default',
-  'primary',
-  'secondary',
-  'success',
-  'error',
-  'info',
-  'warning',
-];
+const MUI_ICON_BUTTON_COLORS = ['inherit', 'default', 'primary', 'secondary', 'success', 'error', 'info', 'warning'];
 
 interface Props extends Omit<IconButtonProps, 'color'> {
   color?: string; // Not only 'inherit' | 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning',

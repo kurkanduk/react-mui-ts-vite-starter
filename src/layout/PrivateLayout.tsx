@@ -38,7 +38,7 @@ const SIDE_BAR_ITEMS: Array<LinkToPage> = [
   },
 ];
 
-if (process.env.REACT_APP_DEBUG === 'true') {
+if (import.meta.env.VITE_APP_DEBUG === 'true') {
   SIDE_BAR_ITEMS.push({
     title: '[Debug Tools]',
     path: '/dev',

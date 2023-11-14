@@ -29,7 +29,7 @@ import NotificationsIcon from '@mui/icons-material/NotificationsOutlined';
  * Important: properties of ICONS object MUST be lowercase!
  * Note: You can use camelCase or UPPERCASE in the <AppIcon icon="someIconByName" /> component
  */
-export const ICONS: Record<string, ComponentType> = {
+const ICONS: Record<string, ComponentType> = {
   default: DefaultIcon,
   logo: LogoIcon,
   close: CloseIcon,

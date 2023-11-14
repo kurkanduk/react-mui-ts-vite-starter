@@ -24,7 +24,7 @@ export const paperStyle = (theme: Theme) => ({
 /**
  * Makes style for Forms across the App
  */
-export const formStyle = (theme: Theme) => ({
+export const formStyle = (_theme: Theme) => ({
   width: '100%',
   maxWidth: '40rem', // 640px
 });

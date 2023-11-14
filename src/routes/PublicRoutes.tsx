@@ -18,7 +18,7 @@ const PublicRoutes = () => {
         <Route path="/" element={<LoginEmailView />} />
         <Route path="auth/*" element={<AuthRoutes />} />
         <Route path="about" element={<AboutView />} />
-        {process.env.REACT_APP_DEBUG === 'true' && <Route path="dev" element={<DevView />} />}
+        {import.meta.env.VITE_APP_DEBUG === 'true' && <Route path="dev" element={<DevView />} />}
         <Route path="*" element={<NotFoundView />} />
       </Routes>
     </PublicLayout>

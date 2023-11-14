@@ -1,9 +1,36 @@
 {
-  "extends": "@tsconfig/create-react-app/tsconfig.json",
   "compilerOptions": {
-    "lib": ["es6", "dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "target": "esnext"
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "./src",
+    "paths": {
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./components/*"],
+      "@config/*": ["./config/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@ioc/*": ["./ioc/*"],
+      "@pages/*": ["./pages/*"],
+      "@utils/*": ["./utils/*"]
+    },
+    "typeRoots": ["node_modules/@types", "./types", "./vite-env.d.ts"]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
