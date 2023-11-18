@@ -1,7 +1,7 @@
 import { FunctionComponent, useMemo, PropsWithChildren } from 'react';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
-import { useAppStore } from '../store';
+import { useAppStore } from 'store/store';
 import DARK_THEME from './dark';
 import LIGHT_THEME from './light';
 import createEmotionCache from './createEmotionCache';

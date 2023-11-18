@@ -1,9 +1,9 @@
-import { forwardRef, ReactNode } from 'react';
+import { forwardRef, ReactNode, AnchorHTMLAttributes } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import { APP_LINK_COLOR, APP_LINK_UNDERLINE } from '../config';
 
-const EXTERNAL_LINK_PROPS = {
+const EXTERNAL_LINK_PROPS: AnchorHTMLAttributes<HTMLAnchorElement> = {
   target: '_blank',
   rel: 'noopener noreferrer',
 };
@@ -23,7 +23,7 @@ export interface AppLinkProps extends MuiLinkProps {
  * @param {string} [href] - external link URI
  * @param {boolean} [openInNewTab] - link will be opened in new tab when true
  */
-const AppLink = forwardRef<any, AppLinkProps>(
+const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
   (
     {
       children,
@@ -31,7 +31,7 @@ const AppLink = forwardRef<any, AppLinkProps>(
       underline = APP_LINK_UNDERLINE,
       to = '',
       href,
-      openInNewTab = Boolean(href), // Open external links in new Tab by default
+      openInNewTab = Boolean(href), // Open external links in a new Tab by default
       ...restOfProps
     },
     ref
@@ -42,6 +42,7 @@ const AppLink = forwardRef<any, AppLinkProps>(
       ...(openInNewTab && EXTERNAL_LINK_PROPS),
       ...restOfProps,
     };
+
     return href ? (
       <MuiLink ref={ref} href={href} {...propsToRender}>
         {children}

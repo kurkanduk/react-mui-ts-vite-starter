@@ -95,7 +95,7 @@ const DialogsSection = () => {
     );
   };
 
-  const onEditEmailDialogClose = useCallback((data: unknown) => {
+  const onEditEmailDialogClose = useCallback(() => {
     setOpenEmailDialog(false);
   }, []);
 

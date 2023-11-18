@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback, MouseEvent } from 'react';
 import { Stack, Divider, Drawer, DrawerProps, FormControlLabel, Switch, Tooltip } from '@mui/material';
 import { AppIconButton } from '../../components';
-import { useAppStore } from '../../store/AppStore';
+import { useAppStore } from 'store/store';
 import { LinkToPage } from '../../utils/type';
 import { useEventLogout, useEventSwitchDarkMode, useIsAuthenticated, useOnMobile } from '../../hooks';
 import SideBarNavList from './SideBarNavList';

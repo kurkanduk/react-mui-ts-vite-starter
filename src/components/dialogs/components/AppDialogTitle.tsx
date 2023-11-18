@@ -1,6 +1,6 @@
 import { FunctionComponent, SyntheticEvent } from 'react';
 import { DialogTitle, DialogTitleProps, Typography, Stack, useTheme } from '@mui/material';
-import { AppIconButton } from '../../';
+import AppIconButton from '@components/AppIconButton/AppIconButton';
 
 interface Props extends DialogTitleProps {
   onClose?: (event: SyntheticEvent) => void;
@@ -26,7 +26,7 @@ const AppDialogTitle: FunctionComponent<Props> = ({ children, onClose, ...props 
           {children}
         </Typography>
       </Stack>
-      {Boolean(onClose) ? (
+      {onClose ? (
         <AppIconButton
           size="large"
           icon="close"

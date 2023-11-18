@@ -1,12 +1,4 @@
-import {
-  createContext,
-  useReducer,
-  useContext,
-  FunctionComponent,
-  Dispatch,
-  ComponentType,
-  PropsWithChildren,
-} from 'react';
+import { createContext, useReducer, FunctionComponent, Dispatch, PropsWithChildren } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AppReducer from './AppReducer';
 import { localStorageGet } from '../utils/localStorage';
@@ -27,7 +19,7 @@ const INITIAL_APP_STATE: AppStoreState = {
 /**
  * Instance of React Context for global AppStore
  */
-type AppContextReturningType = [AppStoreState, Dispatch<any>];
+type AppContextReturningType = [AppStoreState, Dispatch<AppAction>];
 const AppContext = createContext<AppContextReturningType>([INITIAL_APP_STATE, () => null]);
 
 /**
@@ -55,30 +47,37 @@ const AppStoreProvider: FunctionComponent<PropsWithChildren> = ({ children }) =>
 };
 
 /**
- * Hook to use the AppStore in functional components
- *
- * import {useAppStore} from './store'
- * ...
- * const [state, dispatch] = useAppStore();
+ * Represents a user in the application.
+ * @typedef {Object} User
+ * @property {string} uid - The unique identifier of the user.
+ * @property {string} name - The name of the user.
+ * @property {string} [etc] - Additional properties for the user (optional).
  */
-const useAppStore = (): AppContextReturningType => useContext(AppContext);
+type User = {
+  uid: string;
+  name: string;
+  // etc.
+};
+
+type BaseAppAction = {
+  payload?: unknown;
+};
 
 /**
- * HOC to inject the ApStore to class component, also works for functional components
- *
- * import {withAppStore} from './store'
- * ...
- * class MyComponent
- * ...
- * export default withAppStore(MyComponent)
+ * Represents actions that can be dispatched to the application store.
+ * @typedef {Object} AppAction
+ * @property {'CURRENT_USER'} type - The type of the action.
+ * @property {User} [currentUser] - The user object (only applicable for 'CURRENT_USER' action).
+ * @property {'SIGN_UP' | 'LOG_IN'} [type] - The type of authentication action ('SIGN_UP' or 'LOG_IN').
+ * @property {'LOG_OUT'} [type] - The type of action for user logout.
+ * @property {'DARK_MODE'} [type] - The type of action for toggling dark mode.
+ * @property {boolean} [darkMode] - The value indicating whether dark mode is enabled (only applicable for 'DARK_MODE' action).
  */
-interface WithAppStoreProps {
-  store: object;
-}
-const withAppStore =
-  (Component: ComponentType<WithAppStoreProps>): FunctionComponent =>
-  (props) => {
-    return <Component {...props} store={useAppStore()} />;
-  };
+export type AppAction =
+  | (BaseAppAction & { type: 'CURRENT_USER'; currentUser: User })
+  | ({ payload: boolean } & { type: 'DARK_MODE' })
+  | (BaseAppAction & { type: 'LOG_OUT' })
+  | (BaseAppAction & { type: 'LOG_IN' })
+  | (BaseAppAction & { type: 'SIGN_UP' });
 
-export { AppStoreProvider as AppStore, AppContext, useAppStore, withAppStore };
+export { AppStoreProvider as AppStore, AppContext };

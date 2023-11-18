@@ -4,8 +4,7 @@
   "description": "_DESCRIPTION_",
   "author": {
     "name": "Volodymyr Yuzhakov",
-    "email": "vosuperman522@gmail.com",
-    "url": "github.com/kurkanduk"
+    "email": "vovasuperman522@gmail.com"
   },
   "private": true,
   "keywords": [
@@ -36,12 +35,14 @@
     "@mui/material": "latest",
     "@vitejs/plugin-react": "^4.1.1",
     "date-fns": "latest",
+    "firebase": "^10.6.0",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
+    "react-scripts": "^5.0.1",
     "validate.js": "latest",
-    "vite": "^4.5.0",
-    "vite-tsconfig-paths": "^4.2.1",
+    "vite": "latest",
+    "vite-tsconfig-paths": "latest",
     "web-vitals": "latest"
   },
   "devDependencies": {

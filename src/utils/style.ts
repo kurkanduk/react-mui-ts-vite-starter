@@ -1,5 +1,13 @@
 import { Theme } from '@mui/material/styles';
 
+interface DialogStyles {
+  xButton: React.CSSProperties;
+  paper: React.CSSProperties;
+  formControl: React.CSSProperties;
+  content: React.CSSProperties;
+  actions: React.CSSProperties;
+}
+
 export type ColorName =
   | 'default' // MUI 5.x removes 'default' form Button, we need to fix this
   | 'primary'
@@ -24,7 +32,7 @@ export const paperStyle = (theme: Theme) => ({
 /**
  * Makes style for Forms across the App
  */
-export const formStyle = (_theme: Theme) => ({
+export const formStyle = () => ({
   width: '100%',
   maxWidth: '40rem', // 640px
 });
@@ -32,9 +40,7 @@ export const formStyle = (_theme: Theme) => ({
 /**
  * Makes style to use with Material UI dialogs across the App
  */
-export const dialogStyles = (
-  theme: Theme
-): { xButton: any; paper: any; formControl: any; content: any; actions: any } => ({
+export const dialogStyles = (theme: Theme): DialogStyles => ({
   xButton: {
     position: 'absolute',
     right: theme.spacing(0.5),

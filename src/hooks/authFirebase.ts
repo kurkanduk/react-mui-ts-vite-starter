@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react';
-import { useAppStore } from '../store';
+import { useAppStore } from '../store/store';
 import { User as FirebaseUser, getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -63,7 +63,7 @@ export function useAuthWatchdog(afterLogin: () => void, afterLogout: () => void)
 
   useEffect(() => {
     const auth = getAuth();
-    onAuthStateChanged(auth, (firebaseUser) => {
+    onAuthStateChanged(auth, (firebaseUser: CurrentUser) => {
       if (firebaseUser) {
         // Add Firebase User to AppStore
         console.warn('Firebase user is logged in - uid:', firebaseUser?.uid);

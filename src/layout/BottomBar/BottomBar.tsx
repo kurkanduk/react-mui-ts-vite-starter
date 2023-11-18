@@ -1,7 +1,7 @@
-import React, { ChangeEvent, FunctionComponent, useCallback } from 'react';
+import { FunctionComponent, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
-import AppIcon from '../../components/AppIcon';
+import AppIcon from '@components/AppIcon/AppIcon';
 import { LinkToPage } from '../../utils/type';
 
 interface Props {
@@ -17,7 +17,7 @@ const BottomBar: FunctionComponent<Props> = ({ items }) => {
   const location = useLocation();
 
   const onNavigationChange = useCallback(
-    (event: ChangeEvent<{}>, newValue: string) => {
+    (_event: unknown, newValue: string) => {
       navigate(newValue);
     },
     [navigate]

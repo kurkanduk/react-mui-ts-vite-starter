@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { PrivateLayout } from '../layout';
+import PrivateLayout from '../layout/PrivateLayout';
 import { NotFoundView } from '../views';
 import AboutView from '../views/About';
 import DevView from '../views/Dev';

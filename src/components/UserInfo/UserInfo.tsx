@@ -1,10 +1,21 @@
 import { Avatar, Stack, Typography } from '@mui/material';
-import AppLink from '../AppLink';
+import AppLink from '../AppLink/AppLink';
+import { FunctionComponent } from 'react';
+
+interface User {
+  name?: string;
+  nameFirst?: string;
+  nameLast?: string;
+  avatar?: string;
+  phone?: string;
+  email?: string;
+  // Add other properties as needed
+}
 
 interface UserInfoProps {
   className?: string;
   showAvatar?: boolean;
-  user?: any;
+  user?: User | null; // Assuming user can be null or of type User
 }
 
 /**
@@ -14,7 +25,7 @@ interface UserInfoProps {
  * @param {boolean} [showAvatar] - user's avatar picture is shown when true
  * @param {object} [user] - logged user data {name, email, avatar...}
  */
-const UserInfo = ({ className, showAvatar = false, user, ...restOfProps }: UserInfoProps) => {
+const UserInfo: FunctionComponent<UserInfoProps> = ({ showAvatar = false, user, ...restOfProps }) => {
   const fullName = user?.name || [user?.nameFirst || '', user?.nameLast || ''].join(' ').trim();
   const srcAvatar = user?.avatar ? user?.avatar : undefined;
   const userPhoneOrEmail = user?.phone || (user?.email as string);

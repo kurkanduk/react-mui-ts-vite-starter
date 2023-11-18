@@ -11,7 +11,7 @@ import {
   InputAdornment,
   LinearProgress,
 } from '@mui/material';
-import { useAppStore } from '../../../store';
+import { useAppStore } from 'store/store';
 import { AppButton, AppIconButton, AppAlert, AppForm } from '../../../components';
 import { useAppForm, SHARED_CONTROL_PROPS, eventPreventDefault } from '../../../utils/form';
 
@@ -80,7 +80,7 @@ interface FormStateValues {
 const SignupView = () => {
   const navigate = useNavigate();
   const [, dispatch] = useAppStore();
-  const [validationSchema, setValidationSchema] = useState<any>({
+  const [validationSchema, setValidationSchema] = useState<object>({
     ...VALIDATE_FORM_SIGNUP,
     ...VALIDATE_EXTENSION,
   });

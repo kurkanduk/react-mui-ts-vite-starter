@@ -1,7 +1,7 @@
 import { SyntheticEvent, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Grid, TextField, Card, CardHeader, CardContent, InputAdornment } from '@mui/material';
-import { useAppStore } from '../../../store';
+import { useAppStore } from 'store/store';
 import { AppButton, AppLink, AppIconButton, AppAlert, AppForm } from '../../../components';
 import { useAppForm, SHARED_CONTROL_PROPS, eventPreventDefault } from '../../../utils/form';
 

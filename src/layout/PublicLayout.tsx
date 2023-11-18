@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren, useCallback, useState } from 'react';
 import { Stack } from '@mui/material/';
-import { useAppStore } from '../store/AppStore';
+import { useAppStore } from '../store/store';
 import { ErrorBoundary, AppIconButton } from '../components';
 import { LinkToPage } from '../utils/type';
 import { useOnMobile } from '../hooks/layout';

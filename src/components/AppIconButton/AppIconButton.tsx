@@ -1,7 +1,7 @@
 import { ElementType, FunctionComponent, useMemo } from 'react';
 import { Tooltip, IconButton, IconButtonProps } from '@mui/material';
 import AppIcon from '../AppIcon/AppIcon';
-import AppLink from '../AppLink';
+import AppLink from '../AppLink/AppLink';
 import { alpha } from '@mui/material';
 
 const MUI_ICON_BUTTON_COLORS = ['inherit', 'default', 'primary', 'secondary', 'success', 'error', 'info', 'warning'];
