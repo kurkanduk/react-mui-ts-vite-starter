@@ -1,8 +1,10 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import AppIconButton, { MUI_ICON_BUTTON_COLORS } from './AppIconButton';
+import AppIconButton from './AppIconButton';
+import { MUI_ICON_BUTTON_COLORS } from './constants';
 import { APP_ICON_SIZE } from '../config';
-import { ObjectPropByName, capitalize, randomColor, randomText } from '../../utils';
-import { ICONS } from '../AppIcon/AppIcon';
+import { capitalize, randomColor, randomText } from '../../utils';
+// import { ObjectPropByName } from 'utils';
+import { ICONS } from '../AppIcon/constants';
 
 const ComponentToTest = AppIconButton;
 
@@ -12,10 +14,10 @@ function randomPropertyName(obj: object): string {
   return propertyName;
 }
 
-function randomPropertyValue(obj: object): unknown {
-  const propertyName = randomPropertyName(obj);
-  return (obj as ObjectPropByName)[propertyName];
-}
+// function randomPropertyValue<T>(obj: ObjectPropByName<T>): T {
+//   const propertyName = randomPropertyName(obj);
+//   return obj[propertyName];
+// }
 
 /**
  * Tests for <AppIconButton/> component
@@ -64,7 +66,7 @@ describe('<AppIconButton/> component', () => {
 
   it('supports .disable property', () => {
     const testId = randomText(8);
-    const title = randomText(16);
+    // const title = randomText(16);
     render(<ComponentToTest data-testid={testId} disabled />);
 
     // Button

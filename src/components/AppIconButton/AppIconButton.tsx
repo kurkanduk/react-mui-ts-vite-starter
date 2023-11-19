@@ -3,8 +3,7 @@ import { Tooltip, IconButton, IconButtonProps } from '@mui/material';
 import AppIcon from '../AppIcon/AppIcon';
 import AppLink from '../AppLink/AppLink';
 import { alpha } from '@mui/material';
-
-const MUI_ICON_BUTTON_COLORS = ['inherit', 'default', 'primary', 'secondary', 'success', 'error', 'info', 'warning'];
+import { MUI_ICON_BUTTON_COLORS } from './constants';
 
 interface Props extends Omit<IconButtonProps, 'color'> {
   color?: string; // Not only 'inherit' | 'default' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning',
