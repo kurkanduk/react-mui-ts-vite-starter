@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import AppIcon, { ICONS } from './AppIcon';
+import { ICONS } from './constants';
+import AppIcon from './AppIcon';
 import { APP_ICON_SIZE } from '../config';
 import { randomColor, randomText } from '../../utils';
 
@@ -33,6 +34,7 @@ describe('<AppIcon/> component', () => {
 
   it('supports .icon property', () => {
     // Verify that all icons are supported
+    console.log(Object.keys(ICONS));
     for (const icon of Object.keys(ICONS)) {
       const testId = randomText(8);
       render(<ComponentToTest data-testid={testId} icon={icon} />);

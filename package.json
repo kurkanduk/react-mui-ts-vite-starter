@@ -26,7 +26,7 @@
     "format:all": "prettier . --write",
     "lint": "eslint ./src --ext .js,.ts,.tsx",
     "type": "tsc",
-    "test": "react-scripts test"
+    "test": "vitest"
   },
   "dependencies": {
     "@emotion/react": "latest",
@@ -36,6 +36,7 @@
     "@vitejs/plugin-react": "^4.1.1",
     "date-fns": "latest",
     "firebase": "^10.6.0",
+    "jsdom": "^22.1.0",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
@@ -43,11 +44,13 @@
     "validate.js": "latest",
     "vite": "latest",
     "vite-tsconfig-paths": "latest",
+    "vitest": "^0.34.6",
     "web-vitals": "latest"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "latest",
-    "@testing-library/react": "latest",
+    "@babel/plugin-proposal-private-property-in-object": "latest",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
