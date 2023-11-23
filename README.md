@@ -1,6 +1,6 @@
 # Vite + React + Material UI + Auth Starter with TypeScript
     
-This starter template combines the power of Vite, React, Material UI, and TypeScript to provide a robust foundation for building professional React applications efficiently. It is an evolution of the original [@karpolan](https://github.com/karpolan) [react-typescript-mui-with-auth-starter]              (https://github.com/karpolan/react-typescript-mui-with-auth-starter).
+This starter template combines the power of Vite, React, Material UI, and TypeScript to provide a robust foundation for building professional React applications efficiently. It is an evolution of the original [@karpolan](https://github.com/karpolan) [react-typescript-mui-with-auth-starter](https://github.com/karpolan/react-typescript-mui-with-auth-starter)
 
 
 
