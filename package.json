@@ -1,0 +1,80 @@
+{
+  "name": "react-typescript-material",
+  "version": "2.1.19",
+  "description": "_DESCRIPTION_",
+  "author": {
+    "name": "Volodymyr Yuzhakov",
+    "email": "vovasuperman522@gmail.com"
+  },
+  "private": true,
+  "keywords": [
+    "react",
+    "typescript",
+    "material",
+    "mui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "put your repo url here..."
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "start": "vite preview",
+    "dev:update": "npm i && vite",
+    "format": "prettier ./src --write",
+    "format:all": "prettier . --write",
+    "lint": "eslint ./src --ext .js,.ts,.tsx",
+    "type": "tsc",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@vitejs/plugin-react": "^4.1.1",
+    "date-fns": "latest",
+    "firebase": "^10.6.0",
+    "jsdom": "^22.1.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "react-scripts": "^5.0.1",
+    "validate.js": "latest",
+    "vite": "latest",
+    "vite-tsconfig-paths": "latest",
+    "vitest": "^0.34.6",
+    "web-vitals": "latest"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "latest",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-router-dom": "latest",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@vitejs/plugin-react-swc": "^3.4.1",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "prettier": "latest",
+    "typescript": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
